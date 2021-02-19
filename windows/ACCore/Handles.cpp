@@ -53,7 +53,7 @@ INT HandleQueryThread(PSYSTEM_HANDLE_TABLE_ENTRY_INFO HandleEntry) {
 		__fastfail(NT_API_INVOKE_FAILURE);
 	}
 
-	if (!NT_SUCCESS(NtQueryInformationProcess(processHandle, ProcessImageFileName, processNameInformationBuffer, bufferSize, &returnLength))) {
+	if (!NT_SUCCESS(NtQueryInformationProcess(processHandle, ProcessImageFileName, processNameInformationBuffer, static_cast<ULONG>(bufferSize), &returnLength))) {
 		Log(MSG_FATAL, "[MCPAC] [Fatal] The operation of querying the basic information of the process failed.\n");
 		NtTerminateProcess(NtCurrentProcess(), NT_API_INVOKE_FAILURE);
 		__fastfail(NT_API_INVOKE_FAILURE);
@@ -86,7 +86,7 @@ INT HandleQueryThread(PSYSTEM_HANDLE_TABLE_ENTRY_INFO HandleEntry) {
 				goto CleanExit;
 			}
 
-			if (!NT_SUCCESS(NtQueryInformationProcess(duplicateHandle, ProcessImageFileName, openedProcessNameInformationBuffer, bufferSize, &returnLength))) {
+			if (!NT_SUCCESS(NtQueryInformationProcess(duplicateHandle, ProcessImageFileName, openedProcessNameInformationBuffer, static_cast<ULONG>(bufferSize), &returnLength))) {
 				Log(MSG_ERROR, "[MCPAC] [Error] The operation of querying the image file name of the process failed.\n");
 			}
 
