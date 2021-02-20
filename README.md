@@ -20,7 +20,7 @@ Similarly, the principles of these protections are already well known by the aut
 - [X] Library inject detection
 - [X] Remort Thread inject detection
 - [X] [Minecraft Only] disable Java attach / Onload Java agent
-- [X] Speed Hack
+- [X] Speed hack detection
 - [X] Inject thread detection
 - [X] Inline hook scan
 - [X] IAT hook scan
