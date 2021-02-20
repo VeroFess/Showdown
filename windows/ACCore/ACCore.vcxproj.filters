@@ -39,6 +39,18 @@
     <ClCompile Include="Hooks\HookHelper.cpp">
       <Filter>源文件\Hooks</Filter>
     </ClCompile>
+    <ClCompile Include="Verifier.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Hooks\FileHook.cpp">
+      <Filter>源文件\Hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="PebTeb.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryScan.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Logger.hpp">
@@ -52,6 +64,9 @@
     </ClInclude>
     <ClInclude Include="Hooks\Hooks.h">
       <Filter>头文件\Hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="Verifier.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

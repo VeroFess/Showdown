@@ -162,15 +162,20 @@
   <ItemGroup>
     <ClCompile Include="Entry.cpp" />
     <ClCompile Include="Handles.cpp" />
+    <ClCompile Include="Hooks\FileHook.cpp" />
     <ClCompile Include="Hooks\HookHelper.cpp" />
     <ClCompile Include="Hooks\MemoryAllocHook.cpp" />
     <ClCompile Include="Hooks\TlsData.cpp" />
+    <ClCompile Include="MemoryScan.cpp" />
+    <ClCompile Include="PebTeb.cpp" />
+    <ClCompile Include="Verifier.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ThirdParty\phnt\phnt.h" />
     <ClInclude Include="Errors.h" />
     <ClInclude Include="Hooks\Hooks.h" />
     <ClInclude Include="Logger.hpp" />
+    <ClInclude Include="Verifier.h" />
   </ItemGroup>
   <ItemGroup>
     <MASM Include="Hooks\NtAllocateVirtualMemory.asm">

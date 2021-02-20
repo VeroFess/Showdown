@@ -2,6 +2,8 @@
 #include "Logger.hpp"
 #include "Errors.h"
 
+#include "Verifier.h"
+
 #include <objbase.h>
 
 #define PAGE_EXECUTE_FLAGS (PAGE_EXECUTE | PAGE_EXECUTE_READ | PAGE_EXECUTE_READWRITE | PAGE_EXECUTE_WRITECOPY)
@@ -104,7 +106,10 @@ INT HandleQueryThread(PSYSTEM_HANDLE_TABLE_ENTRY_INFO HandleEntry) {
 			if (NT_SUCCESS(NtQueryInformationFile(reinterpret_cast<HANDLE>(HandleEntry->HandleValue), &FIOSB, &FI, sizeof(FILE_STANDARD_INFORMATION), FileStandardInformation)) && !FI.Directory) {
 				Log(MSG_INFO, "      An open file was found: %.*ls\n", reinterpret_cast<POBJECT_NAME_INFORMATION>(objectNameInformationBuffer)->Name.Length, reinterpret_cast<POBJECT_NAME_INFORMATION>(objectNameInformationBuffer)->Name.Buffer);
 
-				//TODO: Verify the opened file.
+				if (!VerifyFile(&reinterpret_cast<POBJECT_NAME_INFORMATION>(objectNameInformationBuffer)->Name)) {
+					NtTerminateProcess(NtCurrentProcess(), UNABLE_TO_VERIFY_LOADED_FILE);
+					__fastfail(UNABLE_TO_VERIFY_LOADED_FILE);
+				}
 			}
 		}
 
@@ -158,6 +163,10 @@ INT HandleQueryThread(PSYSTEM_HANDLE_TABLE_ENTRY_INFO HandleEntry) {
 
 					if (NT_SUCCESS(status = NtQueryVirtualMemory(NtCurrentProcess(), memoryBasicInformation.AllocationBase, MemoryMappedFilenameInformation, memoryMappedFilenameInformationBuffer, bufferSize, &returnLengthVM))) {
 						Log(MSG_DEBUG, "[MCPAC] [Thread] The start address of thread <0x%016X> is in module %.*ls.\n", HandleEntry->HandleValue, memoryMappedFilenameInformationBuffer->Length, memoryMappedFilenameInformationBuffer->Buffer);
+						if (!VerifyLibrary(memoryMappedFilenameInformationBuffer)) {
+							NtTerminateProcess(NtCurrentProcess(), UNABLE_TO_VERIFY_LOADED_LIBRARY);
+							__fastfail(UNABLE_TO_VERIFY_LOADED_LIBRARY);
+						}
 					} else {
 						Log(MSG_FATAL, "[MCPAC] [Thread] [Fatal] The memory attribute of this area is an executable program, but related information cannot be queried.");
 						NtTerminateProcess(NtCurrentProcess(), UNABLE_TO_VERIFY_STARTING_PAGE_INFORMATION);
@@ -166,7 +175,6 @@ INT HandleQueryThread(PSYSTEM_HANDLE_TABLE_ENTRY_INFO HandleEntry) {
 
 					free(memoryMappedFilenameInformationBuffer);
 				}
-
 			}
 		}
 	}

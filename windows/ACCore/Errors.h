@@ -33,6 +33,7 @@
 #define STARTING_PAGE_ATTRIBUTE_IS_NOT_IMAGE                0xBACE0204
 //线程的起点页是IMAGE，但是不知道它映射在了哪个DLL中
 #define UNABLE_TO_VERIFY_STARTING_PAGE_INFORMATION          0xBACE0205
-//加载的镜像在内存中被修改了，应当是HOOK
-
-//
+//加载到内存中的文件未经过验证
+#define UNABLE_TO_VERIFY_LOADED_FILE                        0xBACE0206
+//加载到内存中的动态库未经过验证
+#define UNABLE_TO_VERIFY_LOADED_LIBRARY                     0xBACE0207
