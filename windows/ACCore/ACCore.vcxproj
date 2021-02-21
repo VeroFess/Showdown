@@ -160,6 +160,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AntiDebug.cpp" />
     <ClCompile Include="Entry.cpp" />
     <ClCompile Include="Handles.cpp" />
     <ClCompile Include="Hooks\FileHook.cpp" />
@@ -168,6 +169,7 @@
     <ClCompile Include="Hooks\TlsData.cpp" />
     <ClCompile Include="MemoryScan.cpp" />
     <ClCompile Include="PebTeb.cpp" />
+    <ClCompile Include="PoolScan.cpp" />
     <ClCompile Include="Verifier.cpp" />
   </ItemGroup>
   <ItemGroup>

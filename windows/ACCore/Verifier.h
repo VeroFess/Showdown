@@ -4,3 +4,4 @@
 
 BOOLEAN VerifyFile(PUNICODE_STRING file);
 BOOLEAN VerifyLibrary(PUNICODE_STRING file);
+BOOLEAN VerifyPool(PSYSTEM_POOLTAG poolTag);

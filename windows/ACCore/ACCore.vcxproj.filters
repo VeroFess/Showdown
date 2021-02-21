@@ -51,6 +51,12 @@
     <ClCompile Include="MemoryScan.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="PoolScan.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AntiDebug.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Logger.hpp">

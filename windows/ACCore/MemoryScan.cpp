@@ -5,7 +5,7 @@
 #include "Verifier.h"
 #include "Errors.h"
 
-BOOL QueryVirtualMemory() {
+BOOL QueryVirtualMemoryForHiddenLibrary() {
 	SIZE_T                   returnedLength = 0, bufferSize = 0x1000;
 	PVOID                    memoryMappedFilenameInformationBuffer = 0;
 	MEMORY_BASIC_INFORMATION memoryBasicInformation = { 0 };

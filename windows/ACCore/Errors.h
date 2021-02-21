@@ -37,3 +37,5 @@
 #define UNABLE_TO_VERIFY_LOADED_FILE                        0xBACE0206
 //加载到内存中的动态库未经过验证
 #define UNABLE_TO_VERIFY_LOADED_LIBRARY                     0xBACE0207
+//在内核中存在非法的POOL，用于检查漏洞挂载
+#define BAD_POOL_TAG                                        0xBACE0208
