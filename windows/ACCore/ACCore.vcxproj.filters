@@ -57,6 +57,9 @@
     <ClCompile Include="AntiDebug.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="AnitKeySim.cpp">
+      <Filter>源文件\RawSyscall</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Logger.hpp">

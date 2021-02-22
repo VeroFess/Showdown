@@ -160,6 +160,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AnitKeySim.cpp" />
     <ClCompile Include="AntiDebug.cpp" />
     <ClCompile Include="Entry.cpp" />
     <ClCompile Include="Handles.cpp" />

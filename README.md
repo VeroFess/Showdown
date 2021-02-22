@@ -19,11 +19,10 @@ Similarly, the principles of these protections are already well known by the aut
 
 - [X] Library inject detection
 - [X] Remort Thread inject detection
-- [X] [Minecraft Only] disable Java attach / Onload Java agent
 - [X] Speed hack detection
 - [X] Inject thread detection
-- [X] Inline hook scan
-- [X] IAT hook scan
+- [X] Pool scan
+- [X] Driver scan
 - [X] Anti page hook & breakpoint & dump
 - [X] Mouse & Keyboard automation detection (basic mode)
 - [X] Game client modification detection
@@ -31,6 +30,9 @@ Similarly, the principles of these protections are already well known by the aut
 - [X] Anti-VM
 - [X] Hardware ban
 - [X] Self integrity protection
+- [X] [Minecraft Only] disable Java attach / Onload Java agent
+- [ ] Inline hook scan
+- [ ] IAT hook scan
 - [ ] Software & hardware macro detection
 - [ ] TCP Scan
 - [ ] UI
