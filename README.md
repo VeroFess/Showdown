@@ -1,5 +1,7 @@
 # Binklac-Anticheat
 A universal anti-cheat tool for windows/macOS/linux. Only x64 programs are supported.
+
+Japanese Translation (日本語): [Here](./README_ja.md)
 ---
 **Currently only an early version under development!**
 
@@ -18,7 +20,7 @@ Similarly, the principles of these protections are already well known by the aut
 ## Features:
 
 - [X] Library inject detection
-- [X] Remort Thread inject detection
+- [X] Remote Thread inject detection
 - [X] Speed hack detection
 - [X] Inject thread detection
 - [X] Pool scan
@@ -46,10 +48,10 @@ Similarly, the principles of these protections are already well known by the aut
 Binklac-Anticheat is licensed under the GPLv3 License. Dependencies are under their respective licenses.
 
 ## About update and release
-This project is not my job, I can only maintain it in my free time
+This project is not my job, which means I can only maintain it in my free time.
 
 The files in Relsase will contain more features to help protect yourself from being cracked. This also means that their code is not exactly the same as the open source version, but most of the technology is transparent and universal.
 
 The open source project does not contain the kernel code, but I will provide the compiled binary file in Release.
 
-If you have any suggestions, please let me know
+If you have any suggestions, please let me know.
