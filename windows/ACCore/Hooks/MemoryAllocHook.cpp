@@ -44,7 +44,7 @@ NTSTATUS NTAPI HookedNtAllocateVirtualMemory(
                        SymFunctionTableAccess64, SymGetModuleBase64, nullptr)) {
       auto memoryMappedFilenameInformationBuffer =
           reinterpret_cast<PUNICODE_STRING>(LoggerMalloc(1024));
-      if (memoryMappedFilenameInformationBuffer == nullptr) {
+      if (!memoryMappedFilenameInformationBuffer) {
         continue;
       }
 
@@ -104,7 +104,7 @@ NTSTATUS NTAPI HookedNtProtectVirtualMemory(_In_ HANDLE ProcessHandle,
                        SymFunctionTableAccess64, SymGetModuleBase64, nullptr)) {
       auto memoryMappedFilenameInformationBuffer =
           reinterpret_cast<PUNICODE_STRING>(LoggerMalloc(1024));
-      if (memoryMappedFilenameInformationBuffer == nullptr) {
+      if (!memoryMappedFilenameInformationBuffer) {
         continue;
       }
 
@@ -163,7 +163,7 @@ LONG CALLBACK VectoredHandler(_In_ PEXCEPTION_POINTERS ExceptionInfo) {
                        SymFunctionTableAccess64, SymGetModuleBase64, nullptr)) {
       auto memoryMappedFilenameInformationBuffer =
           reinterpret_cast<PUNICODE_STRING>(LoggerMalloc(1024));
-      if (memoryMappedFilenameInformationBuffer == nullptr) {
+      if (!memoryMappedFilenameInformationBuffer) {
         continue;
       }
 

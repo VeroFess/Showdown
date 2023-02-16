@@ -283,7 +283,7 @@ INT HandleQueryThread(PSYSTEM_HANDLE_TABLE_ENTRY_INFO HandleEntry) {
 
             auto memoryMappedFilenameInformationBuffer =
                 reinterpret_cast<PUNICODE_STRING>(malloc(bufferSize));
-            if (memoryMappedFilenameInformationBuffer == nullptr) {
+            if (!memoryMappedFilenameInformationBuffer) {
               NtTerminateProcess(NtCurrentProcess(), MEMORY_ALLOCATION_FAILED);
               __fastfail(MEMORY_ALLOCATION_FAILED);
             }
