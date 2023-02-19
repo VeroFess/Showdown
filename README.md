@@ -2,7 +2,9 @@
 
 A universal anti-cheat tool for windows/macOS/linux. Only x64 programs are supported.
 
-## Japanese Translation (日本語): [Here](./README_ja.md)
+Japanese Translation (日本語): [Here](./README_ja.md)
+
+---
 
 **Currently only an early version under development!**
 
